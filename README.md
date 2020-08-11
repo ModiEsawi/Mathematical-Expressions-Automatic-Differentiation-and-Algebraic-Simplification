@@ -9,7 +9,7 @@ I also added some advanced simplification , which gave me a bouns of 20 points t
 
 # in this bounus part , i added the following : 
 
-** the num class **
+# the "num" class
 
 i took care of the case where -0 will become equal to 0
 
@@ -17,7 +17,7 @@ i took care of the case where -0 will become equal to 0
 
 
 
-** the Plus class **
+# the "Plus" class 
 
 i took care of the following casses.
 
@@ -39,7 +39,7 @@ i also took care to in foolwing examples :
         //((a * x) + (b * x)) -> ((a+b) * x)
         //((x * a) + (x * b)) -> ((a+b) * x)
 
-** the Div class**
+# the "Div" class
 
 I checked in the Div class if the left part and the right part are both of type "Neg" if so i returned a new Div(first, second).
 
@@ -61,7 +61,7 @@ i also took care of the case that if both expressions are of type "Pow" and both
 
 ((x^z) / (y^z)) = (x/y)^z
 
-** the pow class **
+# the "pow" class
 
 in addition to the bonus simplify of powers in different classes such as the "Mult" , "Log" and "Div" classes  , we also took care of the case in which both pars of the expression are powers , so we will return a new Pow(first, new Mult(first, second,second)).
 
@@ -75,7 +75,7 @@ and to my opnion , one of the coolest thing that i did in the bonus section was 
 
 x ^ -y = 1 / x ^ y
 
-** the Mult class**
+# the "Mult" class
 
 i took care of the following casses.
 
@@ -101,7 +101,7 @@ I checked in Mult if the left  and right are of type "Neg" if so i returned a ne
 x*(-y) = -(x*y)
 
 
-** the Sin class **
+# the "Sin" class 
 
 if the expression inside the Sin is equal to zero , we will return zero (new Num(0)).
 
@@ -113,14 +113,14 @@ if the expression inside Sin is of type "Neg"  i returned a new Neg(new Sin(new 
 sin((-x)) = -sin(x)
 
 
-** the Cos class **
+# the "Cos" class 
 if the expression inside Cos in 0, we will return a new Num (1).
 cos0 =1
 if the expression inside Cos is of type "Neg" , it is equal to Cos with same expression in a positive format so we will return new Cos(new Neg(unary expression)).
  
 cos((-x)) = cos(x)
 
-** the Log class**
+# the "Log" class
 in every case of evaluation , if the base of the log is equal to 1 , an exception in thrown saying that "1" is an invalid base for the log function , but unfurtunatley we cant throw an exception from the "simplify" function because then we will have to change the function settings from the interface to get this "throwin exception" running , and the guide said that we cant change the interface functions signeture. so i talked to my tutor and he said that the following soultion is fine : any time ill have to simplify a log with base = 1, ill print the expression with a message next to it saying the base is invalid! (same approach for 0 ^ 0)
 
 log((x), 1.0)  = invalid base -> math error! 
